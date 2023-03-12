@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import ListContainer from "~/components/List/ListContainer";
 <<<<<<< HEAD
 import SliderContainer from "~/components/SwiperSlider/SliderContainer";
@@ -9,6 +10,11 @@ import SliderContainer from "~/components/SwiperSlider/SliderContainer";
 =======
 import ListView from "~/components/ListView";
 >>>>>>> dda975f (test listview)
+=======
+import ListContainer from "~/components/List/ListContainer";
+
+// NOTE: test data
+>>>>>>> 1c21876 (add http request util & re-format list)
 const songs = [
 	{
 		_id: "61bf8bdbbc1f883d7e782975",
@@ -75,6 +81,7 @@ const songs = [
 		__v: 0,
 		create_at: "2021-05-20T07:22:32.041Z",
 	},
+<<<<<<< HEAD
 <<<<<<< HEAD
 ];
 const title = "Collection";
@@ -162,12 +169,25 @@ function Discovery() {
 		__v: 0,
 		create_at: "2021-08-20T07:22:32.041Z",
 	},
+=======
+>>>>>>> 1c21876 (add http request util & re-format list)
 ];
 const title = "Collection";
 
 function Discovery() {
+<<<<<<< HEAD
 	return <div>Discovery Page</div>;
+<<<<<<< HEAD
 >>>>>>> dda975f (test listview)
+=======
+=======
+	return (
+		<div>
+			<ListContainer props={{ songs, title }} />
+		</div>
+	);
+>>>>>>> a3633f7 (add http request util & re-format list)
+>>>>>>> 1c21876 (add http request util & re-format list)
 }
 
 export default Discovery;
