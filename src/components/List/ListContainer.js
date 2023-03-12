@@ -5,19 +5,26 @@ function ListContainer({ props }) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 82fab72 (update listview)
+=======
+>>>>>>> d13fc54 (add http request util & re-format list)
 		<div>
 			<h2 className="text-2xl capitalize font-bold text-gray-900">{title}</h2>
 			<div className="flex flex-row -mx-auto justify-center">
 				{songs.map((song) => ListItem(song))}
 			</div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d13fc54 (add http request util & re-format list)
 =======
 		<div className="bg-gray-100 p-6">
 			<h2 className="text-2xl font-bold text-gray-900 ml-6">{title}</h2>
 			<div className="flex flex-row">{songs.map((song) => ListItem(song))}</div>
 >>>>>>> ced85be (add http request util & re-format list)
+<<<<<<< HEAD
 =======
 		<div className="bg-gray-100 p-6">
 			<h2 className="text-2xl font-bold text-gray-900 ml-6">{title}</h2>
@@ -25,6 +32,8 @@ function ListContainer({ props }) {
 >>>>>>> 1c21876 (add http request util & re-format list)
 =======
 >>>>>>> 82fab72 (update listview)
+=======
+>>>>>>> d13fc54 (add http request util & re-format list)
 		</div>
 	);
 }

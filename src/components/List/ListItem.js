@@ -3,8 +3,11 @@ function ListItem(song) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 82fab72 (update listview)
+=======
+>>>>>>> d13fc54 (add http request util & re-format list)
 		<div className="px-4">
 			<div key={song.songName} className="group relative w-max">
 				<div className="relative h-auto w-full rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
@@ -26,8 +29,11 @@ function ListItem(song) {
 				</h3>
 			</div>
 =======
+<<<<<<< HEAD
 =======
 >>>>>>> 1c21876 (add http request util & re-format list)
+=======
+>>>>>>> d13fc54 (add http request util & re-format list)
 		<div key={song.songName} className="group relative p-4">
 			<div className="relative h-auto w-full rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
 				<img
@@ -46,6 +52,7 @@ function ListItem(song) {
 				</a>
 			</h3>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> ced85be (add http request util & re-format list)
 =======
 >>>>>>> 1c21876 (add http request util & re-format list)
@@ -59,6 +66,9 @@ function ListItem(song) {
 				</h3>
 			</div>
 >>>>>>> 82fab72 (update listview)
+=======
+>>>>>>> ced85be (add http request util & re-format list)
+>>>>>>> d13fc54 (add http request util & re-format list)
 		</div>
 	);
 }
