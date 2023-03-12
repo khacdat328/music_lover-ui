@@ -1,4 +1,6 @@
-import ListView from "~/components/ListView";
+import ListContainer from "~/components/List/ListContainer";
+
+// NOTE: test data
 const songs = [
 	{
 		_id: "61bf8bdbbc1f883d7e782975",
@@ -65,39 +67,13 @@ const songs = [
 		__v: 0,
 		create_at: "2021-05-20T07:22:32.041Z",
 	},
-	{
-		_id: "61bf9234bc1f883d7e782978",
-		songName: "Don't Wanna Know",
-		artistName: "Maroon 5, Kendrick Lamar",
-		artistId: ["6162d9ba2fddb7174c15dc43"],
-		albumId: "61bf9234bc1f883d7e782978",
-		genreId: "6162bbec9298eb65df91223c",
-		likeCount: 124,
-		songImg: "uploads/image00006.jpeg",
-		songSrc: "uploads/audio00026.mp3",
-		__v: 0,
-		create_at: "2021-08-20T07:22:32.041Z",
-	},
-	{
-		_id: "61bf9234bc1f883d7e782978",
-		songName: "Don't Wanna Know",
-		artistName: "Maroon 5, Kendrick Lamar",
-		artistId: ["6162d9ba2fddb7174c15dc43"],
-		albumId: "61bf9234bc1f883d7e782978",
-		genreId: "6162bbec9298eb65df91223c",
-		likeCount: 124,
-		songImg: "uploads/image00006.jpeg",
-		songSrc: "uploads/audio00026.mp3",
-		__v: 0,
-		create_at: "2021-08-20T07:22:32.041Z",
-	},
 ];
 const title = "Collection";
 
 function Discovery() {
 	return (
 		<div>
-			<ListView props={{ songs, title }} />
+			<ListContainer props={{ songs, title }} />
 		</div>
 	);
 }
