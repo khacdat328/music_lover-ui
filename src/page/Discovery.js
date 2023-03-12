@@ -1,5 +1,9 @@
 import ListContainer from "~/components/List/ListContainer";
+<<<<<<< HEAD
 import SliderContainer from "~/components/SwiperSlider/SliderContainer";
+=======
+
+>>>>>>> ced85be (add http request util & re-format list)
 // NOTE: test data
 const songs = [
 	{
@@ -116,9 +120,14 @@ const data = [
 ];
 function Discovery() {
 	return (
+<<<<<<< HEAD
 		<div className="px-14">
 			<ListContainer props={{ songs, title }} />
 			<SliderContainer data={data} />
+=======
+		<div>
+			<ListContainer props={{ songs, title }} />
+>>>>>>> ced85be (add http request util & re-format list)
 		</div>
 	);
 }
