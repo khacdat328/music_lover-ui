@@ -9,6 +9,9 @@ module.exports = {
 			bgGradientDeg: {
 				117: "117deg",
 			},
+			boxShadow: {
+				'bottomShadow': '0 10px 10px 9px blue'
+			}
 		},
 	},
 	plugins: [
