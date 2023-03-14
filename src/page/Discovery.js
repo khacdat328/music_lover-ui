@@ -182,7 +182,7 @@ function Discovery() {
 =======
 =======
 	return (
-		<div>
+		<div className="px-14">
 			<ListContainer props={{ songs, title }} />
 		</div>
 	);
