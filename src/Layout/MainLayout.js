@@ -4,7 +4,7 @@ import PlayerBar from "./components/PlayerBar"
 function MainLayout({ children }) {
 	return (
 		<div>
-			<div className="w-full flex">
+			<div className="bg-[var(--layout-bg)] w-full flex">
 				<LeftSidebar />
 				<div className="flex-1 h-[var(--main-height)] overflow-auto">
 					<Header />
