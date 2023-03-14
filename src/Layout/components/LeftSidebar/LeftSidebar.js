@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 import {
 	CategoryIcon,
 	MainLogo,
@@ -9,7 +9,8 @@ import {
 } from "~/components/Icon/Icon"
 import config from "~/config"
 import routes from "~/config/config"
-import MenuItem from "./Menu/MenuItem"
+import SidebarBanner from "./SidebarBanner"
+import MenuItem from "./Menu"
 import {
 	PersonalIcon,
 	DiscoverIcon,
@@ -18,6 +19,7 @@ import {
 } from "~/components/Icon/Icon"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAdd } from "@fortawesome/free-solid-svg-icons"
+import Button from "~/components/Button"
 function LeftSidebar() {
 	return (
 		<aside className="bg-slate-800 w-[70px] lg:w-[240px] h-[var(--main-height)] pt-[70px] pb-[54px] position-relative z-50">
@@ -58,6 +60,7 @@ function LeftSidebar() {
 						icon={<FollwingIcon />}
 					/>
 				</nav>
+				
 				<div className="relative h-full overflow-hidden">
 					<div className="h-full overflow-y-auto">
 						<nav>
@@ -82,15 +85,40 @@ function LeftSidebar() {
 								icon={<MVIcon />}
 							/>
 						</nav>
+
+						<SidebarBanner
+							className={"bg-[var(--purple-primary)] mt-[15px]"}
+							content={
+								"Đăng nhập để khám phá playlist dành riêng cho bạn"
+							}>
+							<Button
+								className={
+									"mx-auto rounded-full border-[1.25px] border-white py-[6px] px-[35px] text-[12px] font-semibold text-[var(--text-primary)] leading-[normal]"
+								}>
+								ĐĂNG NHẬP
+							</Button>
+						</SidebarBanner>
+
+						<SidebarBanner
+							className={"bg-gradient-117 from-[#5a4be7] to-[#c86dd7] from-20 leading-[20px]"}
+							content="Nghe nhạc không quảng cáo cùng kho nhạc VIP">
+							<Button
+								className={
+									"bg-[#ffdb00] mx-auto rounded-full border-[1.25px] border-[#ffdb00] py-[6px] px-[35px] text-[12px] font-semibold text-black leading-[normal]"
+								}>
+								NÂNG CẤP VIP
+							</Button>
+						</SidebarBanner>
 					</div>
 				</div>
+
 				<div>
 					<button className="fixed bottom-[90px] flex w-[240px] h-[54px] items-center px-7 border-t border-t-[var(--border-primary)] text-[var(--text-primary)] font-bold ">
 						<FontAwesomeIcon
 							icon={faAdd}
 							className="mr-[10px] text-[18px]"
 						/>
-						<span className="text-[16px]">Tạo playlist mới</span>
+						<span className="text-[14px]">Tạo playlist mới</span>
 					</button>
 				</div>
 			</div>
