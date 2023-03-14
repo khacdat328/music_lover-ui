@@ -1,14 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
 	--main-height: calc(100vh - 90px);
 	--text-primary: #ffffff;
 	--text-secondary: #dadada;
 	--border-primary: #ffffff1a;
+	--purple-primary: #9b4de0
 }
-
+@layer base {
+	html {
+	  font-family: Inter, system-ui, sans-serif;
+	}
+  }
 body ::-webkit-scrollbar {
 	width: 6px;
 }
