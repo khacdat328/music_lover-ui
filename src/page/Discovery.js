@@ -12,7 +12,7 @@ import ListView from "~/components/ListView";
 >>>>>>> dda975f (test listview)
 =======
 import ListContainer from "~/components/List/ListContainer";
-
+import SliderContainer from "~/components/SwiperSlider/SliderContainer";
 // NOTE: test data
 >>>>>>> 1c21876 (add http request util & re-format list)
 const songs = [
@@ -173,7 +173,51 @@ function Discovery() {
 >>>>>>> 1c21876 (add http request util & re-format list)
 ];
 const title = "Collection";
-
+const data = [
+	{
+		_id: "61bf9ac67c36d22a90215339",
+		playlistName: "To The Moon",
+		userId: "61bf9959d2b2d206fd981469",
+		playlistImg: "uploads/image00012.jpeg",
+		playlist_number: 2,
+		numSongs: 0,
+		songId: [],
+	},
+	{
+		_id: "61c16b5ae5db5b804b796e74",
+		playlistName: "Recently Played",
+		userId: "61c16b59e5db5b804b796e71",
+		playlist_number: 1,
+		playlistImg: "uploads/default_playlist.jpeg",
+		songId: [
+			"61bf9b63d2b2d206fd98146a",
+			"61bf9c35d2b2d206fd98146b",
+			"61bf9c89d2b2d206fd98146c",
+			"61bf9b63d2b2d206fd98146a",
+			"61bf9b63d2b2d206fd98146a",
+			"61bf9b63d2b2d206fd98146a",
+			"61bf9b63d2b2d206fd98146a",
+			"61bf9c89d2b2d206fd98146c",
+			"61bf8c48bc1f883d7e782976",
+			"61bf9c89d2b2d206fd98146c",
+			"61bf8c48bc1f883d7e782976",
+			"61bf9b63d2b2d206fd98146a",
+			"61bf9b63d2b2d206fd98146a",
+			"61bf9c89d2b2d206fd98146c",
+		],
+		numSongs: 14,
+		__v: 14,
+	},
+	{
+		_id: "61bf991e7c36d22a90215338",
+		playlistName: "Rap Viet (Mua 2)",
+		userId: "61bf9959d2b2d206fd981469",
+		playlistImg: "uploads/image00011.jpeg",
+		playlist_number: 2,
+		numSongs: 0,
+		songId: [],
+	},
+];
 function Discovery() {
 <<<<<<< HEAD
 	return <div>Discovery Page</div>;
@@ -184,6 +228,7 @@ function Discovery() {
 	return (
 		<div className="px-14">
 			<ListContainer props={{ songs, title }} />
+			<SliderContainer data={data} />
 		</div>
 	);
 >>>>>>> a3633f7 (add http request util & re-format list)
