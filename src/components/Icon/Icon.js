@@ -155,7 +155,7 @@ export const CategoryIcon = ({ width = "20", height = "20", className }) => (
 			stroke="currentColor"
 			strokeWidth="1.25"
 			strokeLinecap="round"
-			stroke-linejoin="round"></path>
+			strokeLinejoin="round"></path>
 		<path
 			d="M11.9736 11.4563L11.9736 17.2279C11.9736 17.3491 12.1045 17.4251 12.2098 17.365L17.26 14.4792C17.3661 14.4186 17.3661 14.2656 17.26 14.205L12.2098 11.3192C12.1045 11.259 11.9736 11.335 11.9736 11.4563Z"
 			stroke="currentColor"
