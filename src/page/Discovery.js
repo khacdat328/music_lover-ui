@@ -1,11 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 import ListContainer from "~/components/List/ListContainer";
-<<<<<<< HEAD
 import SliderContainer from "~/components/SwiperSlider/SliderContainer";
-=======
-
->>>>>>> ced85be (add http request util & re-format list)
 // NOTE: test data
 =======
 import ListView from "~/components/ListView";
@@ -230,14 +226,9 @@ function Discovery() {
 =======
 =======
 	return (
-<<<<<<< HEAD
 		<div className="px-14">
 			<ListContainer props={{ songs, title }} />
 			<SliderContainer data={data} />
-=======
-		<div>
-			<ListContainer props={{ songs, title }} />
->>>>>>> ced85be (add http request util & re-format list)
 		</div>
 	);
 >>>>>>> a3633f7 (add http request util & re-format list)
