@@ -1,20 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 :root {
 	--main-height: calc(100vh - 90px);
 	--text-primary: #ffffff;
 	--text-secondary: #dadada;
+	--icon-primary: #d8d8d8;
 	--border-primary: #ffffff1a;
-	--purple-primary: #9b4de0
+	--purple-primary: #9b4de0;
+	--bg-sidebar: #ffffff0d;
+	--layout-bg: #170f23;
 }
 @layer base {
 	html {
-	  font-family: Inter, system-ui, sans-serif;
+		font-family: Inter, system-ui, sans-serif;
 	}
-  }
+}
+
+@layer utilities {
+	.blur-top-edge {
+		-webkit-mask-image: linear-gradient(
+			180deg,
+			hsla(0, 0%, 100%, 0),
+			hsla(0, 0%, 100%, 0.8) 10%,
+			#fff 25%,
+			#fff
+		);
+	}
+}
 body ::-webkit-scrollbar {
 	width: 6px;
 }

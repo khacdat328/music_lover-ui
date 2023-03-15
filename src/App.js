@@ -16,7 +16,7 @@ function App() {
 								path={route.path}
 								element={
 									<MainLayout>
-										<route.component />
+										<Page />
 									</MainLayout>
 								}
 							/>

@@ -20,9 +20,16 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAdd } from "@fortawesome/free-solid-svg-icons"
 import Button from "~/components/Button"
+import { useRef, useState } from "react"
 function LeftSidebar() {
+	const divRef = useRef()
+	const [scroll, setScroll] = useState(false)
+	const handleBlurOnScroll = (e) => {
+		const scrolledFromTop = divRef.current.scrollTop
+		setScroll(scrolledFromTop > 1)
+	}
 	return (
-		<aside className="bg-slate-800 w-[70px] lg:w-[240px] h-[var(--main-height)] pt-[70px] pb-[54px] position-relative z-50">
+		<aside className="bg-[var(--bg-sidebar)] w-[70px] lg:w-[240px] h-[var(--main-height)] pt-[70px] pb-[54px] position-relative z-50">
 			<div className="flex flex-col h-full">
 				<nav>
 					<div className="fixed top-0 flex items-center w-[240px] h-[70px] pr-6 pl-7">
@@ -60,10 +67,15 @@ function LeftSidebar() {
 						icon={<FollwingIcon />}
 					/>
 				</nav>
-				
-				<div className="relative h-full overflow-hidden">
-					<div className="h-full overflow-y-auto">
-						<nav>
+				<div className="relative h-[1px] after:block after:content-[''] after:absolute after:left-6 after:right-6 after:border-t-[1px] after:border-[var(--border-primary)]"></div>
+				<div className="relative h-full overflow-hidden mt-[10px]">
+					<div
+						className={`${
+							scroll ? "blur-top-edge" : ""
+						} h-full overflow-y-auto`}
+						ref={divRef}
+						onScroll={handleBlurOnScroll}>
+						<nav className="mt-[5px]">
 							<MenuItem
 								title={"Nhạc Mới"}
 								to={config.routes.newsongs}
@@ -93,18 +105,20 @@ function LeftSidebar() {
 							}>
 							<Button
 								className={
-									"mx-auto rounded-full border-[1.25px] border-white py-[6px] px-[35px] text-[12px] font-semibold text-[var(--text-primary)] leading-[normal]"
+									"mx-auto border-[1.25px] border-white py-[6px] px-[35px] text-[12px] font-semibold text-[var(--text-primary)] leading-[normal]"
 								}>
 								ĐĂNG NHẬP
 							</Button>
 						</SidebarBanner>
 
 						<SidebarBanner
-							className={"bg-gradient-117 from-[#5a4be7] to-[#c86dd7] from-20 leading-[20px]"}
+							className={
+								"bg-gradient-117 from-[#5a4be7] to-[#c86dd7] from-20 leading-[20px]"
+							}
 							content="Nghe nhạc không quảng cáo cùng kho nhạc VIP">
 							<Button
 								className={
-									"bg-[#ffdb00] mx-auto rounded-full border-[1.25px] border-[#ffdb00] py-[6px] px-[35px] text-[12px] font-semibold text-black leading-[normal]"
+									"bg-[#ffdb00] mx-auto border-[1.25px] border-[#ffdb00] py-[6px] px-[35px] text-[12px] font-semibold text-black leading-[normal]"
 								}>
 								NÂNG CẤP VIP
 							</Button>

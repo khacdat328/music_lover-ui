@@ -1,8 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-function Button({ className, leftIcon, rightIcon, children, ...props }) {
+function Button({
+	className,
+	leftIcon,
+	rightIcon,
+	children,
+	...props
+}) {
 	return (
-		<button className={`${className} flex items-center justify-center`} {...props}>
+		<button
+			className={`${className} flex items-center justify-center rounded-full`}
+			{...props}>
 			{leftIcon && <FontAwesomeIcon icon={leftIcon} />}
 			<span>{children}</span>
 			{rightIcon && <FontAwesomeIcon icon={rightIcon} />}
