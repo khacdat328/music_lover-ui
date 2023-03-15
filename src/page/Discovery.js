@@ -128,8 +128,8 @@ const data = [
 function Discovery() {
 	return (
 		<div className="px-14">
-			<ListContainer props={{ songs, title }} />
 			<SliderContainer data={data} />
+			<ListContainer props={{ songs, title }} />
 		</div>
 	);
 }

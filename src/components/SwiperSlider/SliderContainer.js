@@ -13,29 +13,27 @@ import { Autoplay, Pagination } from "swiper";
 export default function SliderContainer({ data }) {
 	return (
 		<div className="pt-8">
-			<div className="max-h-[240px]">
-				<Swiper
-					slidesPerView={3}
-					spaceBetween={16}
-					pagination={{
-						clickable: true,
-					}}
-					modules={[Autoplay, Pagination]}
-					autoplay={{
-						delay: 1000,
-						disableOnInteraction: false,
-					}}
-					className="mySwiper"
-				>
-					{data.map((item) => {
-						return (
-							<SwiperSlide>
-								<SliderItem data={{ item }} />
-							</SwiperSlide>
-						);
-					})}
-				</Swiper>
-			</div>
+			<Swiper
+				slidesPerView={3}
+				spaceBetween={30}
+				pagination={{
+					clickable: true,
+				}}
+				modules={[Autoplay, Pagination]}
+				autoplay={{
+					delay: 1000,
+					disableOnInteraction: false,
+				}}
+				className="mySwiper"
+			>
+				{data.map((item) => {
+					return (
+						<SwiperSlide>
+							<SliderItem data={{ item }} />
+						</SwiperSlide>
+					);
+				})}
+			</Swiper>
 		</div>
 	);
 }
