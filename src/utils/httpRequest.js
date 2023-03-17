@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const request = axios.create({ baseURL: "http://musiclovers.ap-1.evennode.com" });
+export const baseURL = "http://musiclovers.ap-1.evennode.com";
+const request = axios.create({ baseURL });
 export const get = async (url, option = {}) => {
 	try {
 		const data = await request.get(url, option);
