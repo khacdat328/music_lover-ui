@@ -25,10 +25,11 @@ export default function SliderContainer({ data }) {
 					delay: 1000,
 					disableOnInteraction: false,
 				}}
+
 				className="mySwiper">
 				{data.map((item, index) => {
 					return (
-						<SwiperSlide key={index} className='max-h-[240px]'>
+						<SwiperSlide key={index} className="px-[15px]">
 							<SliderItem data={{ item }} />
 						</SwiperSlide>
 					)
