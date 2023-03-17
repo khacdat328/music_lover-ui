@@ -4,7 +4,7 @@ export default function SliderItem({ data }) {
 		<div className="">
 			<a href="#">
 				<img
-					src={"http://localhost:4000/" + item.playlistImg}
+					src={"http://musiclovers.ap-1.evennode.com/" + item.playlistImg}
 					alt={item.playlistName}
 					className="h-full w-full object-cover object-center rounded-lg max-h-[240px]"
 				/>
