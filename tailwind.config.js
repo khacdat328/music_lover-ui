@@ -11,6 +11,11 @@ module.exports = {
 			},
 			boxShadow: {
 				'bottomShadow': '0 10px 10px 9px blue'
+			},
+			colors: {
+				'primary' : '#FFFFFF',
+				'secondary': '#ffffff80',
+				'alpha': "#ffffff1a"
 			}
 		},
 	},

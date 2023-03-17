@@ -8,7 +8,7 @@ function MainLayout({ children }) {
 				<LeftSidebar />
 				<div className="flex-1 h-[var(--main-height)] overflow-auto">
 					<Header />
-					<div>{children}</div>
+					<div className="w-full px-[60px]"><div className="w-full 2xl:max-w-[1450px] mx-auto">{children}</div></div>
 				</div>
 			</div>
 			<PlayerBar />

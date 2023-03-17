@@ -5,11 +5,12 @@ function Button({
 	leftIcon,
 	rightIcon,
 	children,
+	onClick,
 	...props
 }) {
 	return (
-		<button
-			className={`${className} flex items-center justify-center rounded-full`}
+		<button 
+			className={`${className} flex items-center justify-center rounded-full`} onClick = {onClick}
 			{...props}>
 			{leftIcon && <FontAwesomeIcon icon={leftIcon} />}
 			<span>{children}</span>
