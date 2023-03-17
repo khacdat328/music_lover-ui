@@ -9,7 +9,6 @@ import SliderItem from "./SliderItem"
 
 // import required modules
 import { Autoplay, Pagination } from "swiper"
-import { logDOM } from "@testing-library/react"
 
 export default function SliderContainer({ data }) {
 	return (
@@ -28,9 +27,8 @@ export default function SliderContainer({ data }) {
 				}}
 				className="mySwiper">
 				{data.map((item, index) => {
-					console.log({ item })
 					return (
-						<SwiperSlide key={index}>
+						<SwiperSlide key={index} className='max-h-[240px]'>
 							<SliderItem data={{ item }} />
 						</SwiperSlide>
 					)

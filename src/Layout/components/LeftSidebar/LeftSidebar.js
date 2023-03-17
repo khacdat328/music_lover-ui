@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import {
 	CategoryIcon,
 	MainLogo,
+	MainLogoResponsive,
 	MVIcon,
 	NewSongIcon,
 	RadioIcon,
@@ -32,11 +33,12 @@ function LeftSidebar() {
 		<aside className="bg-[var(--bg-sidebar)] w-[70px] lg:w-[240px] h-[var(--main-height)] pt-[70px] pb-[54px] position-relative z-50">
 			<div className="flex flex-col h-full">
 				<nav>
-					<div className="fixed top-0 flex items-center w-[240px] h-[70px] pr-6 pl-7">
+					<div className="fixed top-0 flex items-center justify-center lg:justify-start lg:w-[240px] h-[70px] lg:pr-6 lg:pl-7 w-[70px] ">
 						<Link
 							to={config.routes.discovery}
-							className="w-[120px] h-[40px] block">
-							<MainLogo />
+							className="max-w-[120px] h-[40px] block">
+							<MainLogo className={"hidden lg:block"} />
+							<MainLogoResponsive className={"block lg:hidden"} />
 						</Link>
 					</div>
 				</nav>
@@ -44,27 +46,27 @@ function LeftSidebar() {
 					<MenuItem
 						title={"Cá Nhân"}
 						to={config.routes.personal}
-						icon={<PersonalIcon />}
+						icon={<PersonalIcon className={'mr-2.5'} />}
 					/>
 					<MenuItem
 						title={"Khám Phá"}
 						to={config.routes.discovery}
-						icon={<DiscoverIcon />}
+						icon={<DiscoverIcon className={'mr-2.5'} />}
 					/>
 					<MenuItem
 						title={"#zingchart"}
 						to={config.routes.zingchart}
-						icon={<ZingChartIcon />}
+						icon={<ZingChartIcon className={'mr-2.5'} />}
 					/>
 					<MenuItem
 						title={"Radio"}
 						to={config.routes.radio}
-						icon={<RadioIcon />}
+						icon={<RadioIcon className={'mr-2.5'} />}
 					/>
 					<MenuItem
 						title={"Theo Dõi"}
 						to={config.routes.following}
-						icon={<FollwingIcon />}
+						icon={<FollwingIcon className={'mr-2.5'} />}
 					/>
 				</nav>
 				<div className="relative h-[1px] after:block after:content-[''] after:absolute after:left-6 after:right-6 after:border-t-[1px] after:border-[var(--border-primary)]"></div>
@@ -79,27 +81,29 @@ function LeftSidebar() {
 							<MenuItem
 								title={"Nhạc Mới"}
 								to={config.routes.newsongs}
-								icon={<NewSongIcon />}
+								icon={<NewSongIcon className={'mr-2.5'}/>}
 							/>
 							<MenuItem
 								title={"Thể loại"}
 								to={config.routes.category}
-								icon={<CategoryIcon />}
+								icon={<CategoryIcon className={'mr-2.5'}/>}
 							/>
 							<MenuItem
 								title={"Top 100"}
 								to={config.routes.top}
-								icon={<TopIcon />}
+								icon={<TopIcon className={'mr-2.5'}/>}
 							/>
 							<MenuItem
 								title={"MV"}
 								to={config.routes.mv}
-								icon={<MVIcon />}
+								icon={<MVIcon className={'mr-2.5'}/>}
 							/>
 						</nav>
 
 						<SidebarBanner
-							className={"bg-[var(--purple-primary)] mt-[15px]"}
+							className={
+								"hidden lg:block bg-[var(--purple-primary)] mt-[15px]"
+							}
 							content={
 								"Đăng nhập để khám phá playlist dành riêng cho bạn"
 							}>
@@ -113,7 +117,7 @@ function LeftSidebar() {
 
 						<SidebarBanner
 							className={
-								"bg-gradient-117 from-[#5a4be7] to-[#c86dd7] from-20 leading-[20px]"
+								"hidden lg:block bg-gradient-117 from-[#5a4be7] to-[#c86dd7] from-20 leading-[20px]"
 							}
 							content="Nghe nhạc không quảng cáo cùng kho nhạc VIP">
 							<Button
@@ -127,7 +131,7 @@ function LeftSidebar() {
 				</div>
 
 				<div>
-					<button className="fixed bottom-[90px] flex w-[240px] h-[54px] items-center px-7 border-t border-t-[var(--border-primary)] text-[var(--text-primary)] font-bold ">
+					<button className="hidden fixed bottom-[90px] lg:flex w-[240px] h-[54px] items-center px-7 border-t border-t-[var(--border-primary)] text-[var(--text-primary)] font-bold ">
 						<FontAwesomeIcon
 							icon={faAdd}
 							className="mr-[10px] text-[18px]"

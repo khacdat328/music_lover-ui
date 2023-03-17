@@ -32,7 +32,7 @@ function Header() {
 	}
 	return (
 		<header className="h-[70px] flex items-center">
-			<div className="fixed left-[240px] right-0 px-[60px] flex items-center justify-between  text-[var(--text-secondary)]">
+			<div className="fixed left-[70px] lg:left-[240px] right-0 px-[60px] flex items-center justify-between  text-[var(--text-secondary)]">
 				<div className="flex flex-grow">
 					<button className="text-[24px]" onClick={() => navigate(-1)}>
 						<FontAwesomeIcon icon={faArrowLeft} className="mr-[20px]" />

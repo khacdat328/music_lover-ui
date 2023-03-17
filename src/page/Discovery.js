@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react"
 import * as getSongs from "~/ApiService/Songs"
 import * as getPlayList from "~/ApiService/PLayList"
+import Section from "~/components/Section"
 import ListContainer from "~/components/List/ListContainer"
 import SliderContainer from "~/components/SwiperSlider/SliderContainer"
-import { get } from "../utils/httpRequest"
+import NewRelease from "~/components/Section/Section Content"
+
 // NOTE: test data
 const title = "Collection"
 function Discovery() {
 	const [playlist, setPlayList] = useState([])
 	const [newSongList, setNewSongList] = useState([])
+
 	const FetchData = () => {
 		getSongs
 			.NewRelease()
@@ -23,11 +26,13 @@ function Discovery() {
 	useEffect(() => {
 		FetchData()
 	}, [])
-	const BannerData = playlist.filter((item, index) => index < 6)
+	// const BannerData = playlist.filter((item, index) => index < 6)
+	console.log( newSongList )
 	return (
-		<div className="px-14">
-			<SliderContainer data={BannerData} />
-			{/* <ListContainer props={{ listOfItems: newSongList, title }} /> */}
+		<div className="px-[30px] lg:px-14">
+			<Section title={"Mới phát hành"} seeAll={false}>
+				<NewRelease data={newSongList} />
+			</Section>
 		</div>
 	)
 }
