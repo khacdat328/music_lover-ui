@@ -1,40 +1,36 @@
-import React, { useRef, useState } from "react"
+import React, { useRef, useState } from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react"
-// Import Swiper styles
-// import 'Sw'
-import "swiper/css"
-import "swiper/css/pagination"
-import SliderItem from "./SliderItem"
+import { EffectCreative } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import SliderItem from "./SliderItem";
 
 // import required modules
-import { Autoplay, Pagination } from "swiper"
+import { Autoplay } from "swiper";
 
 export default function SliderContainer({ data }) {
 	return (
 		<div className="pt-8">
 			<Swiper
-				loop
+				loop={true}
 				slidesPerView={3}
 				spaceBetween={30}
-				pagination={{
-					clickable: true,
-				}}
-				modules={[Autoplay, Pagination]}
+				modules={[Autoplay]}
 				autoplay={{
-					delay: 1000,
+					delay: 20000,
 					disableOnInteraction: false,
 				}}
-
-				className="mySwiper">
+				className="mySwiper"
+			>
 				{data.map((item, index) => {
 					return (
 						<SwiperSlide key={index} className="px-[15px]">
 							<SliderItem data={{ item }} />
 						</SwiperSlide>
-					)
+					);
 				})}
 			</Swiper>
 		</div>
-	)
+	);
 }
