@@ -1,5 +1,5 @@
 import { forwardRef, useState } from "react"
-import image from "~/assets/images/image"
+import image from "~/assets/images"
 const Image = forwardRef(
 	(
 		{
