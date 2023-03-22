@@ -7,7 +7,6 @@ import "swiper/css/pagination";
 import ArtistListItem from "./ArtistListItem";
 
 export default function ListContainer({ data }) {
-	console.log(data);
 	return (
 		<div className="pt-8">
 			<Swiper

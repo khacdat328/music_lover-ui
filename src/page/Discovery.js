@@ -4,13 +4,13 @@ import * as getPlayList from "~/ApiService/PLayList";
 import * as getArtists from "~/ApiService/Artists";
 import Section from "~/components/Section";
 // import ListContainer from "~/components/List/Songs/ListContainer";
-import ListContainer from "~/components/List/Artists/ListContainer";
+import ArtistsContainer from "~/components/List/Artists";
 
 import SliderContainer from "~/components/SwiperSlider/SliderContainer";
 import NewRelease from "~/components/Section/Section Content";
+import PlaylistsContainer from "~/components/List/Playlists/PlaylistsContainer";
 
 // NOTE: test data
-const title = "Collection";
 function Discovery() {
 	const [playlist, setPlayList] = useState([]);
 	const [newSongList, setNewSongList] = useState([]);
@@ -26,7 +26,7 @@ function Discovery() {
 			.PlayList("61bf9959d2b2d206fd981469")
 			.then((res) => setPlayList(res))
 			.catch((e) => console.log(e));
-		getArtists
+		await getArtists
 			.Artists()
 			.then((res) => setArtistList(res))
 			.catch((e) => console.log(e));
@@ -41,7 +41,10 @@ function Discovery() {
 			<Section title={"Mới phát hành"} seeAll={false}>
 				<NewRelease data={newSongList} />
 			</Section>
-			<ListContainer data={artistList} />
+			<Section title={"Chill"} seeAll={false}>
+				<PlaylistsContainer data={playlist.slice(0, 5)} />
+			</Section>
+			<ArtistsContainer data={artistList} />
 		</div>
 	);
 }
