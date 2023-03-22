@@ -12,13 +12,13 @@ function Discovery() {
 	const [playlist, setPlayList] = useState([])
 	const [newSongList, setNewSongList] = useState([])
 
-	const FetchData = () => {
-		getSongs
+	const FetchData = async () => {
+		await getSongs
 			.NewRelease()
 			.then((data) => setNewSongList(data))
 			.catch((e) => console.log(e))
 
-		getPlayList
+		await getPlayList
 			.PlayList("61bf9959d2b2d206fd981469")
 			.then((res) => setPlayList(res))
 			.catch((e) => console.log(e))
@@ -27,9 +27,16 @@ function Discovery() {
 		FetchData()
 	}, [])
 	// const BannerData = playlist.filter((item, index) => index < 6)
-	console.log( newSongList )
 	return (
-		<div className="px-[30px] lg:px-14">
+		<div className="">
+			<Section title={"Mới phát hành"} seeAll={false}>
+				<NewRelease data={newSongList} />
+			</Section>
+
+			<Section title={"Chill"} seeAll={false}>
+				<NewRelease data={newSongList} />
+			</Section>
+
 			<Section title={"Mới phát hành"} seeAll={false}>
 				<NewRelease data={newSongList} />
 			</Section>
