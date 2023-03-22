@@ -16,13 +16,13 @@ function Discovery() {
 	const [newSongList, setNewSongList] = useState([]);
 	const [artistList, setArtistList] = useState([]);
 
-	const FetchData = () => {
-		getSongs
+	const FetchData = async () => {
+		await getSongs
 			.NewRelease(12)
 			.then((data) => setNewSongList(data))
 			.catch((e) => console.log(e));
 
-		getPlayList
+		await getPlayList
 			.PlayList("61bf9959d2b2d206fd981469")
 			.then((res) => setPlayList(res))
 			.catch((e) => console.log(e));
