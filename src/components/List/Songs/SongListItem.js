@@ -1,6 +1,7 @@
 import { baseURL } from "~/utils/httpRequest";
 
 function ListItem(song) {
+	console.log(song);
 	return (
 		<div key={song.songName} className="group relative p-4">
 			<div className="relative h-auto w-full rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
