@@ -38,6 +38,7 @@ function Discovery() {
 	return (
 		<div className="px-[30px] lg:px-14">
 			<SliderContainer data={playlist} />
+
 			<Section title={"Mới phát hành"} seeAll={false}>
 				<NewRelease data={newSongList} />
 			</Section>
