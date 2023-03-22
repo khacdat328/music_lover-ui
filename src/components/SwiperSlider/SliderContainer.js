@@ -16,9 +16,19 @@ export default function SliderContainer({ data }) {
 				loop={true}
 				slidesPerView={3}
 				spaceBetween={30}
-				modules={[Autoplay]}
+				effect={"creative"}
+				creativeEffect={{
+					limitProgress: 2,
+					prev: {
+						translate: ["70%", 0, -900],
+					},
+					next: {
+						translate: ["100%", 0, 0],
+					},
+				}}
+				modules={[Autoplay, EffectCreative]}
 				autoplay={{
-					delay: 20000,
+					delay: 1000,
 					disableOnInteraction: false,
 				}}
 				className="mySwiper"
