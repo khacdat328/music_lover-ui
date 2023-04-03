@@ -10,13 +10,17 @@ module.exports = {
 				117: "117deg",
 			},
 			boxShadow: {
-				'bottomShadow': '0 10px 10px 9px blue'
+				bottomShadow: "0 10px 10px 9px blue",
+				headerBottom: "0 3px 5px rgb(0 0 0 / 0.1)",
+				popper: "0 2px 5px rgb( 0 0 0 / 0.2)",
 			},
 			colors: {
-				'primary' : '#FFFFFF',
-				'secondary': '#ffffff80',
-				'alpha': "#ffffff1a"
-			}
+				primary: "#FFFFFF",
+				secondary: "#ffffff80",
+				alpha: "#ffffff1a",
+				"link-hover": "#c273ed",
+				primaryBg: "#34224f",
+			},
 		},
 	},
 	plugins: [
@@ -46,6 +50,9 @@ module.exports = {
 					),
 				}
 			)
+		}),
+		require("tailwindcss/plugin")(({ addVariant }) => {
+			addVariant('foo', '&:has(button:focus)')
 		}),
 	],
 }

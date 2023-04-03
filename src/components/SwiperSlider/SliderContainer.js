@@ -11,7 +11,7 @@ import { Autoplay } from "swiper";
 
 export default function SliderContainer({ data }) {
 	return (
-		<div className="pt-8">
+		<div className="pt-8 -mx-3.5">
 			<Swiper
 				loop={true}
 				slidesPerView={3}

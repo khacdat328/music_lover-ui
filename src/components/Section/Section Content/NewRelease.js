@@ -34,7 +34,7 @@ function NewRelease({ data }) {
 					QUỐC TẾ
 				</button>
 			</div>
-			<div className="flex w-full flex-wrap">
+			<div className="flex flex-wrap w-auto -mx-3.5 ">
 				{data.map((item, index) => (
 					<SongItem key={index} data={item}/>
 				))}

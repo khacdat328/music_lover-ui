@@ -1,21 +1,21 @@
-import { useEffect, useRef, useState } from "react"
+import { memo, useRef, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { faGem } from "@fortawesome/free-regular-svg-icons"
 import {
 	faArrowLeft,
 	faArrowRight,
 	faClose,
-	faDownload,
 	faGear,
 	faSearch,
-	faX,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import useDebounce from "~/hooks"
 import Button from "~/components/Button"
-import { WinDownloadIcon } from "~/components/Icon/Icon"
-import { useNavigate } from "react-router-dom"
 
-function Header() {
+const blurStyle = `bg-[var(--layout-alpha)] backdrop-blur-[50px] shadow-headerBottom`
+
+function Header({ ...props }) {
+	const { blur } = props
 	const searchRef = useRef()
 	const navigate = useNavigate()
 	const [search, setSearch] = useState("")
@@ -31,8 +31,11 @@ function Header() {
 		searchRef.current.focus()
 	}
 	return (
-		<header className="h-[70px] flex items-center">
-			<div className="fixed left-[70px] lg:left-[240px] right-0 px-[60px] flex items-center justify-between  text-[var(--text-secondary)]">
+		<header className="relative h-[70px] flex items-center z-10">
+			<div
+				className={`fixed left-[70px] lg:left-[240px] right-0 mr-[6px] py-[15px] pl-[60px] pr-[54px] flex items-center justify-between  text-[var(--text-secondary)] ${
+					blur ? blurStyle : ""
+				}`}>
 				<div className="flex flex-grow">
 					<button className="text-[24px]" onClick={() => navigate(-1)}>
 						<FontAwesomeIcon icon={faArrowLeft} className="mr-[20px]" />
@@ -82,4 +85,4 @@ function Header() {
 	)
 }
 
-export default Header
+export default memo(Header)
