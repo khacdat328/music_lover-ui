@@ -12,6 +12,7 @@
 	--purple-primary: #9b4de0;
 	--bg-sidebar: #ffffff0d;
 	--layout-bg: #170f23;
+	--layout-alpha: rgb(23, 15, 35, 0.8);
 }
 @layer base {
 	html {
@@ -28,6 +29,10 @@
 			#fff 25%,
 			#fff
 		);
+	}
+	.square-40{
+		width: 40px;
+		height: 40px;
 	}
 }
 body ::-webkit-scrollbar {

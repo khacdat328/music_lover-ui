@@ -1,5 +1,5 @@
 function Popper({children}) {
-    return ( <div>
+    return ( <div className="bg-primaryBg rounded-lg shadow-popper">
         {children}
     </div> );
 }
