@@ -7,22 +7,17 @@ export const MainProvider = createContext()
 
 function MainLayout({ children }) {
 	const divRef = useRef()
-	const [blurHeader, setBlurHeader] = useState(false)
-	const [scrolling, setScrolling] = useState(false)
-	const handleBodyScroll = () => {
-		setBlurHeader(divRef.current.scrollTop > 15)
-	}
+
 	return (
-		<MainProvider.Provider value={{ divRef, scrolling }}>
+		<MainProvider.Provider value={{ divRef }}>
 			<div>
 				<div className="bg-[var(--layout-bg)] w-full flex ">
 					<LeftSidebar />
 
 					<div
 						ref={divRef}
-						onScroll={handleBodyScroll}
 						className="flex-1 h-[var(--main-height)] overflow-y-scroll">
-						<Header blur={blurHeader} />
+						<Header/>
 						<div className="w-full px-[60px]">
 							<div className="w-full 2xl:max-w-[1450px] mx-auto">
 								{children}

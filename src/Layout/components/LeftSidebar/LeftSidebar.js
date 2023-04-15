@@ -1,3 +1,4 @@
+import { memo, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import {
 	CategoryIcon,
@@ -21,7 +22,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAdd } from "@fortawesome/free-solid-svg-icons"
 import Button from "~/components/Button"
-import { memo, useRef, useState } from "react"
 function LeftSidebar() {
 	const divRef = useRef()
 	const [scroll, setScroll] = useState(false)
@@ -29,7 +29,6 @@ function LeftSidebar() {
 		const scrolledFromTop = divRef.current.scrollTop
 		setScroll(scrolledFromTop > 1)
 	}
-	console.log('leftsidebar render');
 	return (
 		<aside className="bg-[var(--bg-sidebar)] w-[70px] lg:w-[240px] h-[var(--main-height)] pt-[70px] pb-[54px] position-relative z-50">
 			<div className="flex flex-col h-full">
@@ -128,30 +127,7 @@ function LeftSidebar() {
 								NÂNG CẤP VIP
 							</Button>
 						</SidebarBanner>
-						<SidebarBanner
-							className={
-								"hidden lg:block bg-gradient-117 from-[#5a4be7] to-[#c86dd7] from-20 leading-[20px]"
-							}
-							content="Nghe nhạc không quảng cáo cùng kho nhạc VIP">
-							<Button
-								className={
-									"bg-[#ffdb00] mx-auto border-[1.25px] border-[#ffdb00] py-[6px] px-[35px] text-[12px] font-semibold text-black leading-[normal]"
-								}>
-								NÂNG CẤP VIP
-							</Button>
-						</SidebarBanner>
-						<SidebarBanner
-							className={
-								"hidden lg:block bg-gradient-117 from-[#5a4be7] to-[#c86dd7] from-20 leading-[20px]"
-							}
-							content="Nghe nhạc không quảng cáo cùng kho nhạc VIP">
-							<Button
-								className={
-									"bg-[#ffdb00] mx-auto border-[1.25px] border-[#ffdb00] py-[6px] px-[35px] text-[12px] font-semibold text-black leading-[normal]"
-								}>
-								NÂNG CẤP VIP
-							</Button>
-						</SidebarBanner>
+						
 					</div>
 				</div>
 
