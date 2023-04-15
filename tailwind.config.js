@@ -52,7 +52,8 @@ module.exports = {
 			)
 		}),
 		require("tailwindcss/plugin")(({ addVariant }) => {
-			addVariant('foo', '&:has(button:focus)')
+			addVariant("foo", "&:has(button:focus)")
 		}),
+		require("@tailwindcss/line-clamp"),
 	],
 }

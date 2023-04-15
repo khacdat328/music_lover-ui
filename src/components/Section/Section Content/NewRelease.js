@@ -3,6 +3,7 @@ import SongItem from "../SongItem"
 
 const activeButton = "bg-[var(--purple-primary)] border-transparent"
 function NewRelease({ data }) {
+	// console.log(data);
 	const [isActived, setActive] = useState("1")
 	const handleActive = (e) => {
 		if (isActived !== e.target.id) setActive(e.target.id)

@@ -1,4 +1,4 @@
-import { memo, useRef, useState } from "react"
+import { memo, useRef, useState, useContext, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { faGem } from "@fortawesome/free-regular-svg-icons"
 import {
@@ -9,32 +9,43 @@ import {
 	faSearch,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import useDebounce from "~/hooks"
 import Button from "~/components/Button"
+import { MainProvider } from "~/Layout/MainLayout"
 
 const blurStyle = `bg-[var(--layout-alpha)] backdrop-blur-[50px] shadow-headerBottom`
 
 function Header({ ...props }) {
-	const { blur } = props
 	const searchRef = useRef()
+	const { divRef } = useContext(MainProvider)
 	const navigate = useNavigate()
 	const [search, setSearch] = useState("")
+	const [blurHeader, setBlurHeader] = useState(false)
+	
 	const handleSearch = (e) => {
 		const searchValue = e.target.value
 		if (!searchValue.startsWith(" ")) {
 			setSearch(e.target.value)
 		}
 	}
-
+	const handleBodyScroll = () => {
+		setBlurHeader(divRef.current.scrollTop > 15)
+	}
 	const handleClear = () => {
 		setSearch("")
 		searchRef.current.focus()
 	}
+
+	useEffect(() => {
+		const parentdiv = divRef.current
+		parentdiv.addEventListener("scroll", handleBodyScroll)
+		return () => parentdiv.removeEventListener("scroll", handleBodyScroll)
+	}, [])
+
 	return (
 		<header className="relative h-[70px] flex items-center z-10">
 			<div
 				className={`fixed left-[70px] lg:left-[240px] right-0 mr-[6px] py-[15px] pl-[60px] pr-[54px] flex items-center justify-between  text-[var(--text-secondary)] ${
-					blur ? blurStyle : ""
+					blurHeader && blurStyle
 				}`}>
 				<div className="flex flex-grow">
 					<button className="text-[24px]" onClick={() => navigate(-1)}>

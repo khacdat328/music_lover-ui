@@ -39,7 +39,7 @@ const PlaylistItem = ({ item }) => {
 
 				<div className="mt-3">
 					<div>
-						<h3 className="text-secondary mx-1 overflow-hidden">
+						<h3 className="text-sm text-secondary mx-1 line-clamp-2">
 							{item.playlistName}
 						</h3>
 					</div>
